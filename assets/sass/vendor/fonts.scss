@@ -1,0 +1,59 @@
+@font-face {
+	font-family: Primary;
+	src: url('../fonts/RedHatDisplay-Regular.woff2');
+	src: url('../fonts/RedHatDisplay-Regular.woff2') format('woff2'),
+    url('../fonts/RedHatDisplay-Regular.ttf') format('truetype');
+	font-style: normal;
+ 	font-weight: 400;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Primary;
+	src: url('../fonts/RedHatDisplay-Medium.woff2');
+	src: url('../fonts/RedHatDisplay-Medium.woff2') format('woff2'),
+    url('../fonts/RedHatDisplay-Medium.ttf') format('truetype');
+	font-style: normal;
+ 	font-weight: 500;
+	font-display: swap;
+}
+
+
+@font-face {
+	font-family: Primary;
+	src: url('../fonts/RedHatDisplay-SemiBold.woff2');
+	src: url('../fonts/RedHatDisplay-SemiBold.woff2') format('woff2'),
+    url('../fonts/RedHatDisplay-SemiBold.ttf') format('truetype');
+	font-style: normal;
+ 	font-weight: 600;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: Primary;
+	src: url('../fonts/RedHatDisplay-Bold.woff2');
+	src: url('../fonts/RedHatDisplay-Bold.woff2') format('woff2'),
+    url('../fonts/RedHatDisplay-Bold.ttf') format('truetype');
+	font-style: normal;
+ 	font-weight: 700;
+	font-display: swap;
+}
+
+body {
+	@include limbo-min {
+		font-size: 24px;
+	}
+	@include tab-max {
+		font-size: 20px;
+	}
+	font-family: Primary, sans-serif;
+	color: var(--b-color);
+	line-height: var(--body-line-height);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Primary, sans-serif;
+	color: var(--t-color);
+	line-height: var(--title-line-height);
+	font-weight: 400;
+}

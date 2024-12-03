@@ -1,0 +1,235 @@
+// Home Hero
+
+.home_hero {
+	padding-top: 21.2rem;
+	padding-bottom: 15rem;
+	background-color: #f4f2ee;
+	.home_hero_inner {
+		@include flex-between;
+		.left {
+			width: 70%;
+		}
+		.right {
+			width: 28%;
+		}
+	}
+	h1 {
+		font-size: 17rem;
+		line-height: 1;
+	}
+	.home_hero_text {
+		font-size: 4rem;
+		max-width: 60rem;
+		line-height: 1;
+		margin-top: 10rem;
+	}
+}
+
+// Certified Developer
+
+.certified_developer {
+	background-color: #fff;
+	.certified_developer_inner {
+		@include flex-between;
+		@include bs;
+		padding: var(--space-1) var(--space-3) 0 var(--space-1);
+		border-radius: 9rem;
+		transform: translateY(-4.8rem);
+		background-color: #fff;
+		.left {
+			width: 37%;
+			padding: 10rem 0 var(--space-2) 7.5rem;
+			background-color: #175260;
+			border-radius: 3.2rem;
+			transform: translateY(--space-2);
+			margin-top: -5rem;
+			img {
+				height: 100%;
+			}
+		}
+		.mid {
+			width: 37%;
+			margin-left: auto;
+			margin-right: 7rem;
+			p {
+				font-size: 2.4rem;
+			}
+			.intro_title {
+				margin-bottom: var(--space-3);
+			}
+		}
+		.right {
+			width: 16.4rem;
+			display: flex;
+			align-items: flex-end;
+			padding-bottom: 3.2rem;
+		}
+	}
+}
+
+
+// Project Manager
+
+.project_manager {
+	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(244,242,238,1) 25%, rgba(244,242,238,1) 75%, rgba(255,255,255,1) 100%);
+}
+
+.project_manager_box {
+	@include flex-between;
+	align-items: center;
+	background-color: #fff;
+	@include bs;
+	padding: var(--space-2);
+	border-radius: 4rem;
+	margin-block: var(--space-2);
+	position: relative;
+	.icon {
+		width: 5rem;
+		position: absolute;
+		top: var(--space-3);
+		left: var(--space-2);
+		opacity: .3;
+	}
+	.left {
+		width: 52%;
+	}
+	.right {
+		width: 30%;
+		@include flex-center;
+		background-color: #E8F7EB;
+		border-radius: 3.2rem;
+		padding: var(--space-3);
+		aspect-ratio: 1 / 1;
+		img {
+			width: 70%;
+		}
+	}
+}
+
+
+// Speaker
+
+.conference_speaker  {
+	.st_intro {
+		text-align: center;
+		flex-direction: column;
+		margin-bottom: var(--space-3);
+		.intro_title {
+			margin-inline: auto;
+			width: 100%;
+
+		}
+	}
+}
+
+.conf_grid {
+	@include flex-between;
+	figure {
+		width: 30%;
+		img {
+			aspect-ratio: 58 / 52;
+			border-radius: 3.2rem;
+		}
+		h3 {
+			font-weight: 600;
+			font-size: 3.2rem;
+		}
+		p {
+			font-size: 20px;
+			opacity: .5;
+		}
+		figcaption {
+			line-height: 1;
+			margin-top: var(--space-3);
+
+		}
+	}
+}
+
+
+// Mentorship
+
+.mentorship  {
+	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(244,242,238,1) 50%);
+	.st_intro {
+		margin-bottom: var(--space-3);
+	}
+	.st_tabs_nav {
+        ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+			@include bs;
+			border-radius: 50px;
+        }
+        li {
+            display: inline-block;
+			width: 25%;
+			text-align: center;
+			border-radius: 50px;
+            a {
+                display: block;
+                padding: 1.5rem 2rem;
+                color: #000;
+				font-size: 18px;
+				font-weight: 500;
+            }
+            &.active {
+                background-color: #050406;
+                a {
+					color: #fff;
+					font-size: 18px;
+                }
+            }
+        }
+    }
+	.mentorship_tabs {
+		@include bs;
+		padding: var(--space-2) var(--space-1) 0 var(--space-1);
+		border-radius: 9rem;
+		background-color: #fff;
+	}
+    .st_tabs_content {
+		border-top-left-radius: 0;
+
+        .st_tab {
+			transform: translateY(var(--space-2));
+
+			.st_tab_inner {
+				@include flex-between;
+				align-items: center;
+
+				.left {
+					width: 40%;
+					img {
+						object-position: bottom;
+						aspect-ratio: 1 / 1;
+						border-radius: 3.2rem;
+
+					}
+				}
+				.right {
+					width: 50%;
+					max-width: 68rem;
+					padding-bottom: var(--space-2);
+				}
+			}
+			&:not(:first-child) {
+				display: none;
+			}
+		}
+    }
+    @include mob-only {
+        &.stack_tabs {
+            ul {
+                flex-direction: column;
+                li {
+                    width: 100%;
+                    &.active {
+                        order: 1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+footer {
+	background-color: var(--bg-2);
+	.footer_top {
+		@include flex-between;
+		padding-block: 10rem var(--space-2);
+		.left {
+			width: 45%;
+			max-width: 480px;
+			.one {
+				max-width: 165px;
+			}
+			.two {
+				max-width: 41rem;
+				margin-top: 3.2rem;
+			}
+			p {
+				color: #fff;
+				font-size: 16px;
+				opacity: .5;
+			}
+		}
+		.right {
+			h2 {
+				color: #fff;
+			}
+			a {
+				font-size: var(--font-size-1);
+				color: var(--bg-2);
+				text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+				opacity: .4;
+			}
+		}
+	}
+	.footer_bottom {
+		color: rgba(255,255,255, .4);
+		font-size: 16px;
+	}
+}
