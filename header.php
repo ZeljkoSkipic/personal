@@ -60,6 +60,7 @@
 					array(
 						'theme_location' => 'main',
 						'menu_id'        => 'primary-menu',
+						'menu_class'        => 'container',
 						'walker'		 => new CustomMenuWalker
 					)
 				);

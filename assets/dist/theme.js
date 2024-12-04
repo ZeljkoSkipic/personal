@@ -1,6 +1,11 @@
 "use strict";
 
 jQuery(document).ready(function ($) {
+  gsap.registerPlugin(ScrollTrigger);
+});
+"use strict";
+
+jQuery(document).ready(function ($) {
   var $stickyElement = $(".header-main");
 
   // Get the initial offset position of the element
@@ -18,8 +23,9 @@ jQuery(document).ready(function ($) {
   // Mobile navigation
 
   $(".menu-toggle").click(function () {
-    $("#primary-menu").fadeToggle();
+    $(".menu-main-container").slideToggle();
     $(this).toggleClass('menu-open');
+    $(".header-main").toggleClass('menu-open');
   });
 
   // Sub Menu Trigger

@@ -18,8 +18,9 @@ jQuery(document).ready(function ($) {
     // Mobile navigation
 
     $(".menu-toggle").click(function () {
-        $("#primary-menu").fadeToggle();
-        $(this).toggleClass('menu-open')
+        $(".menu-main-container").slideToggle();
+        $(this).toggleClass('menu-open');
+		$(".header-main").toggleClass('menu-open')
     });
 
     // Sub Menu Trigger

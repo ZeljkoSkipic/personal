@@ -24,11 +24,20 @@ main {
 	z-index: 9;
 	position: sticky;
 	top: 1.2rem;
+	&.menu-open {
+		.header-main_inner {
+			border-radius: 0;
+		}
+	}
 	&.is-pinned {
 		.header-main_inner {
 			background-color: #fff;
 			@include bs;
 			padding: 3.2rem 4.8rem;
+			z-index: 2;
+		}
+		#primary-menu {
+			background-color: #fff;
 		}
 	}
 	.header-main_inner {
@@ -53,35 +62,35 @@ main {
 		object-fit: contain;
 		width: 100%;
 	}
-	.main-navigation {
-		ul {
-			display: none;
-		}
-	}
-	#primary-menu {
-		position: fixed;
-		width: 30rem;
+	.menu-main-container {
+		display: none;
+		position: absolute;
+		width: 100%;
 		height: fit-content;
 		overflow: auto;
-		background-color: #fff;
-		padding: 25px;
 		z-index: 9;
-		@include bs;
-		border-radius: 3.2rem;
-		transform: translateX(-86%);
+		left: auto;
+		right: 0;
+	}
+	#primary-menu {
+		border-radius: 0 0 3.2rem 3.2rem;
+		padding: 1.2rem 4.8rem 3.2rem 4.8rem;
+		display: flex;
+		justify-content: space-evenly;
+		@include st;
 		li {
 			position: relative;
 			display: grid;
 			align-items: center;
-			grid-template-columns: calc(100% - 55px) 25px;
 			column-gap: 30px;
 			a {
 				padding: 0.5rem 1.5rem;
 				color: var(--t-color);
 				font-size: 20px;
+				letter-spacing: 1px;
 				width: 100%;
 				display: inline-flex;
-				font-weight: 600;
+				font-weight: 500;
 			}
 			&.current-menu-item {
 				a {
