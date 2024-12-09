@@ -11,7 +11,8 @@
 
 			$title = get_sub_field('title');
 			?>
-			<div class="project_manager_box container">
+			<div class="project_manager_box">
+				<div class="project_manager_box_inner c-wide">
 				<?php
 				$icon = get_sub_field('icon');
 				$size = 'full';
@@ -32,6 +33,7 @@
 				<?php if( $image ) {
 					echo wp_get_attachment_image( $image, $size, "", array( "class" => "image" ) );
 				} ?>
+				</div>
 				</div>
 			</div>
 

@@ -67,21 +67,26 @@
 	}
 }
 
-
 // Project Manager
 
 .project_manager {
 	background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(244,242,238,1) 25%, rgba(244,242,238,1) 75%, rgba(255,255,255,1) 100%);
 }
 
+
 .project_manager_box {
-	@include flex-between;
-	align-items: center;
-	background-color: #fff;
 	@include bs;
-	padding: var(--space-2);
 	border-radius: 4rem;
-	margin-block: var(--space-2);
+	height: 100vh;
+	background-color: #fff;
+	&:last-child {
+		z-index: 9;
+		position: relative;
+	}
+}
+.project_manager_box_inner {
+	@include flex-between;
+	padding: var(--space-2);
 	position: relative;
 	.icon {
 		width: 5rem;
@@ -91,17 +96,27 @@
 		opacity: .3;
 	}
 	.left {
-		width: 52%;
+		width: 50%;
+		padding-top: var(--space-1);
 	}
 	.right {
-		width: 30%;
-		@include flex-center;
-		background-color: #E8F7EB;
+		width: 35%;
 		border-radius: 3.2rem;
-		padding: var(--space-3);
-		aspect-ratio: 1 / 1;
+		aspect-ratio: 16 / 9;
+		@include st;
+		display: flex;
+		align-items: flex-end;
 		img {
-			width: 70%;
+			border-radius: 2rem;
+			aspect-ratio: 16 / 9;
+		}
+	}
+	&:hover {
+		.right {
+			padding: 1px;
+			img {
+				border-radius: 4rem;
+			}
 		}
 	}
 }
@@ -123,25 +138,83 @@
 }
 
 .conf_grid {
-	@include flex-between;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 3.2rem;
 	figure {
-		width: 30%;
+		position: relative;
+		height: auto;
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(19, 86, 107, .6);
+			border-radius: 10px;
+			opacity: 0;
+			@include st;
+		}
+		&:nth-child(1), &:nth-child(3) {
+			margin-top: 7.5rem;
+		}
+		&:nth-child(2), &:nth-child(4) {
+			margin-bottom: 7.5rem;
+		}
+		&:nth-child(6), &:nth-child(8) {
+			margin-top: -7.5rem;
+			margin-bottom: 7.5rem;
+		}
 		img {
-			aspect-ratio: 58 / 52;
-			border-radius: 3.2rem;
+			aspect-ratio: 1 / 1;
+			border-radius: 1rem;
+		}
+		figcaption {
+			z-index: 2;
+			width: 90%;
+			left: 5%;
+			text-align: center;
+			position: absolute;
+			margin-inline: auto;
+			top: auto;
+			@include st;
+			box-sizing: border-box;
+			line-height: 1;
+			bottom: 0;
 		}
 		h3 {
 			font-weight: 600;
-			font-size: 3.2rem;
+			font-size: 16px;
+			background-color: rgba(232, 247, 235, 1);
+			padding: 15px 26px;
+			border-radius: 8px;
+			@include st;
+			font-weight: 500;
+
 		}
 		p {
-			font-size: 20px;
-			opacity: .5;
+			opacity: 0;
+			margin: 0;
+			color: #fff;
+			@include st;
 		}
-		figcaption {
-			line-height: 1;
-			margin-top: var(--space-3);
-
+		&:hover {
+			&::before {
+				opacity: 1;
+			}
+			figcaption {
+				bottom: 2rem;
+				h3 {
+					background-color: rgba(232, 247, 235, 0);
+					color: #fff;
+					font-size: 18px;
+					padding-inline: 0;
+				}
+				p {
+					font-size: 16px;
+					opacity: 1;
+					margin-bottom: 1.6rem;
+				}
+			}
 		}
 	}
 }
@@ -155,44 +228,60 @@
 		margin-bottom: var(--space-3);
 	}
 	.st_tabs_nav {
-        ul {
-            margin: 0;
-            padding: 0;
-            display: flex;
+		ul {
+			margin: 0;
+			padding: 0;
+			display: flex;
 			@include bs;
 			border-radius: 50px;
-        }
-        li {
-            display: inline-block;
+			position: relative; /* Added for slider positioning */
+		}
+		li {
+			display: inline-block;
 			width: 25%;
 			text-align: center;
 			border-radius: 50px;
-            a {
-                display: block;
-                padding: 1.5rem 2rem;
-                color: #000;
+			position: relative; /* Ensure stacking context for text over slider */
+			z-index: 2; /* Ensure text stays above the slider */
+			a {
+				display: block;
+				padding: 1.5rem 2rem;
+				color: #000;
 				font-size: 18px;
 				font-weight: 500;
-            }
-            &.active {
-                background-color: #050406;
-                a {
+				@include st;
+			}
+			&.active {
+				a {
 					color: #fff;
 					font-size: 18px;
-                }
-            }
-        }
-    }
+				}
+			}
+		}
+		.slider {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 100%;
+			background-color: #050406;
+			border-radius: 50px; /* Matches li border-radius for smooth edges */
+			transition: all 0.3s ease;
+			width: 0; /* Initial width for animation */
+			z-index: 1; /* Sits below the text */
+		}
+	}
+
 	.mentorship_tabs {
 		@include bs;
 		padding: var(--space-2) var(--space-1) 0 var(--space-1);
 		border-radius: 9rem;
 		background-color: #fff;
 	}
-    .st_tabs_content {
+
+	.st_tabs_content {
 		border-top-left-radius: 0;
 
-        .st_tab {
+		.st_tab {
 			transform: translateY(var(--space-2));
 
 			.st_tab_inner {
@@ -205,7 +294,6 @@
 						object-position: bottom;
 						aspect-ratio: 1 / 1;
 						border-radius: 3.2rem;
-
 					}
 				}
 				.right {
@@ -218,7 +306,8 @@
 				display: none;
 			}
 		}
-    }
+	}
+
     @include mob-only {
         &.stack_tabs {
             ul {

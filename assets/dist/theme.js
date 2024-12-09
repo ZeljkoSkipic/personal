@@ -1,7 +1,28 @@
 "use strict";
 
 jQuery(document).ready(function ($) {
-  gsap.registerPlugin(ScrollTrigger);
+  var panels = gsap.utils.toArray(".project_manager_box");
+  panels.forEach(function (panel, i) {
+    ScrollTrigger.create({
+      trigger: panel,
+      start: "top top",
+      pin: i < panels.length - 1,
+      // Pin only if it's not the last panel
+      pinSpacing: false,
+      onUpdate: function onUpdate(self) {
+        var progress = self.progress; // Progress between 0 and 1
+        gsap.to(panel, {
+          scale: 1 - 0.15 * progress,
+          // Shrinks to 50% at full progress
+          opacity: 1 - progress,
+          // Fades to 0 at full progress
+          overwrite: "auto",
+          // Avoid conflicts
+          duration: 0 // Instant adjustments
+        });
+      }
+    });
+  });
 });
 "use strict";
 
@@ -23,7 +44,7 @@ jQuery(document).ready(function ($) {
   // Mobile navigation
 
   $(".menu-toggle").click(function () {
-    $(".menu-main-container").slideToggle();
+    $(".menu-main-wrap").fadeToggle();
     $(this).toggleClass('menu-open');
     $(".header-main").toggleClass('menu-open');
   });
@@ -43,25 +64,45 @@ jQuery(document).ready(function ($) {
   });
 
   // Tabs
+  jQuery(document).ready(function ($) {
+    var $tabsNav = $('.st_tabs_nav ul');
+    var $tabs = $tabsNav.find('li');
+    var slider = $('<div class="slider"></div>');
+    $tabsNav.append(slider);
+    function updateSlider($activeTab) {
+      var tabWidth = $activeTab.outerWidth();
+      var tabLeft = $activeTab.position().left;
+      slider.css({
+        width: "".concat(tabWidth, "px"),
+        transform: "translateX(".concat(tabLeft, "px)")
+      });
+    }
 
-  $('.st_tabs_nav li:first-child').addClass('active');
-  $('.st_tabs_nav a').click(function (e) {
-    e.preventDefault();
-    // Check for active
-    var tabLabels = $(this.closest('.container')).find('.st_tabs_nav li');
-    tabLabels.removeClass('active');
-    $(this).parent().addClass('active');
+    // Initialize the first active tab and slider position
+    var $firstTab = $tabs.first();
+    $firstTab.addClass('active');
+    updateSlider($firstTab);
+    $('.st_tabs_nav a').click(function (e) {
+      e.preventDefault();
 
-    // Display active tab
-    var currentTab = $(this).data('tab');
-    var currentsTabContent = $(this.closest('.container')).find('.st_tab');
-    currentsTabContent.hide();
-    $.each(currentsTabContent, function (key, tab) {
-      var tabContentIndex = $(tab).data('tab');
-      if (tabContentIndex === currentTab) {
-        $(tab).show();
-      }
+      // Manage active class on tab navigation
+      var $tabLabels = $(this.closest('.container')).find('.st_tabs_nav li');
+      $tabLabels.removeClass('active');
+      var $activeTab = $(this).parent();
+      $activeTab.addClass('active');
+
+      // Animate slider to the active tab
+      updateSlider($activeTab);
+
+      // Display active tab content with fade-in effect
+      var currentTab = $(this).data('tab');
+      var $tabsContent = $(this.closest('.container')).find('.st_tab');
+      $tabsContent.removeClass('tab_active').hide(); // Hide all tabs and remove active class
+      $tabsContent.each(function () {
+        if ($(this).data('tab') === currentTab) {
+          $(this).addClass('tab_active').fadeIn(400); // Add active class and fade in
+        }
+      });
     });
-    return false;
   });
 });

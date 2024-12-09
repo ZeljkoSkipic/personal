@@ -1,5 +1,5 @@
 <section class="conference_speaker space_0_1">
-	<div class="container">
+	<div class="c-narrow">
 		<?php get_template_part('components/intro'); ?>
 		<?php
 

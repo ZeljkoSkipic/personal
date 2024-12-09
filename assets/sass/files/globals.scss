@@ -4,6 +4,18 @@
 	margin-inline: auto;
 }
 
+.c-wide {
+	width: var(--site-width);
+	max-width: 1800px;
+	margin-inline: auto;
+}
+
+.c-narrow {
+	width: var(--site-width);
+	max-width: 1440px;
+	margin-inline: auto;
+}
+
 // Fix user agent spacings
 
 h1, h2  {

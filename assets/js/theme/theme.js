@@ -18,7 +18,7 @@ jQuery(document).ready(function ($) {
     // Mobile navigation
 
     $(".menu-toggle").click(function () {
-        $(".menu-main-container").slideToggle();
+        $(".menu-main-wrap").fadeToggle();
         $(this).toggleClass('menu-open');
 		$(".header-main").toggleClass('menu-open')
     });
@@ -38,28 +38,49 @@ jQuery(document).ready(function ($) {
 	});
 
 	// Tabs
+	jQuery(document).ready(function ($) {
+		const $tabsNav = $('.st_tabs_nav ul');
+		const $tabs = $tabsNav.find('li');
+		const slider = $('<div class="slider"></div>');
+		$tabsNav.append(slider);
 
-    $('.st_tabs_nav li:first-child').addClass('active');
-    $('.st_tabs_nav a').click(function (e) {
+		function updateSlider($activeTab) {
+			const tabWidth = $activeTab.outerWidth();
+			const tabLeft = $activeTab.position().left;
+			slider.css({
+				width: `${tabWidth}px`,
+				transform: `translateX(${tabLeft}px)`
+			});
+		}
 
-        e.preventDefault();
-        // Check for active
-        let tabLabels =  $(this.closest('.container')).find('.st_tabs_nav li');
-        tabLabels.removeClass('active');
-        $(this).parent().addClass('active');
+		// Initialize the first active tab and slider position
+		const $firstTab = $tabs.first();
+		$firstTab.addClass('active');
+		updateSlider($firstTab);
 
-        // Display active tab
-        let currentTab = $(this).data('tab');
-        let currentsTabContent = $(this.closest('.container')).find('.st_tab');
-        currentsTabContent.hide();
-        $.each(currentsTabContent, (key, tab) => {
-            let tabContentIndex = $(tab).data('tab');
-            if(tabContentIndex === currentTab ) {
-                $(tab).show();
-            }
-        });
+		$('.st_tabs_nav a').click(function (e) {
+			e.preventDefault();
 
-        return false;
-    });
+			// Manage active class on tab navigation
+			const $tabLabels = $(this.closest('.container')).find('.st_tabs_nav li');
+			$tabLabels.removeClass('active');
+			const $activeTab = $(this).parent();
+			$activeTab.addClass('active');
+
+			// Animate slider to the active tab
+			updateSlider($activeTab);
+
+			// Display active tab content with fade-in effect
+			const currentTab = $(this).data('tab');
+			const $tabsContent = $(this.closest('.container')).find('.st_tab');
+			$tabsContent.removeClass('tab_active').hide(); // Hide all tabs and remove active class
+			$tabsContent.each(function () {
+				if ($(this).data('tab') === currentTab) {
+					$(this).addClass('tab_active').fadeIn(400); // Add active class and fade in
+				}
+			});
+		});
+	});
+
 
 });
