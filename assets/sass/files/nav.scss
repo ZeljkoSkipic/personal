@@ -12,10 +12,7 @@ label[for="nav-toggle"] {
 	font-size: 0;
 }
 
-main {
-/* 	transform: translateY(-8rem);
-	margin-bottom: -8rem; */
-}
+
 @mixin h-bg {
 	background-color: rgba(255, 255, 255, 0.3);
 	border-radius: 1.6rem;
@@ -28,14 +25,13 @@ main {
 	box-sizing: border-box;
 	z-index: 9;
 	position: sticky;
-	background-color: #f4f2ee;
 	@include st;
-	padding-inline: 25px;
+	padding-inline: calc(5% - 24px);
 	.ham_wrap {
 		display: flex;
 		padding: 12px 24px;
 		@include st;
-		P {
+		p {
 			margin: 0;
 			font-size: 18px;
 			letter-spacing: 1px;
@@ -51,14 +47,13 @@ main {
 		background-color: transparent;
 		top: 5px;
 		.site-logo {
-			width: 150px;
+			width: 15rem;
 		}
 		.site-logo, .ham_wrap {
 			@include h-bg;
 		}
 		.menu-main-wrap {
-			top: calc(7.5rem + 5px);
-			right: 25px;
+			top: 70px;
 		}
 	}
 	.header-main_inner {
@@ -66,19 +61,16 @@ main {
 		justify-content: space-between;
 		align-items: center;
 		box-sizing: border-box;
-		height: 70px;
-		height: 8rem;
 		@include st;
 	}
 
 	.site-logo {
-		width: 200px;
-		max-width: 50%;
 		margin: 0;
 		display: flex;
-		max-height: 5.4rem;
 		padding: 12px 24px;
 		@include st;
+		aspect-ratio: 327 / 105;
+		width: 20rem;
 	}
 	img {
 		height: 100%;
@@ -88,8 +80,8 @@ main {
 	.menu-main-wrap {
 		display: none;
 		position: fixed;
-		right: 37px;
-		top: 7.5rem;
+		right: calc(5% - 24px);
+		top: calc(70px + var(--space-4));
 		height: fit-content;
 		overflow: hidden;
 		z-index: 9;
@@ -98,7 +90,7 @@ main {
 		padding-inline: 16px;
 		justify-content: space-evenly;
 		border: 1px solid rgba(255,255,255,.2);
-		width: 26rem;
+		width: 260px;
 		transition: right .3s ease-in-out, top .3s ease-in-out;
 	}
 	#primary-menu {

@@ -71,8 +71,6 @@ function stier_scripts()
 	wp_enqueue_script('theme-script', get_template_directory_uri() . '/assets/dist/theme.min.js', array('jquery'), $js_cache_buster);
 
 	wp_enqueue_script('scroll-trigger', get_template_directory_uri() . '/assets/dist/vendor/ScrollTrigger.min.js', array('jquery'), '3.12.5');
-	wp_enqueue_script('gsap', get_template_directory_uri() . '/assets/dist/vendor/gsap.min.js', array('jquery'), '3.12.5');
-
 
 	wp_enqueue_style('stier-style', get_stylesheet_uri(), array(), '1.0.0');
 

@@ -1,3 +1,11 @@
+html {
+	scroll-behavior: smooth;
+  }
+
+body {
+ 	background-color: #e2e2e2;
+	padding-top: var(--space-4);
+}
 .container {
 	width: var(--site-width);
 	max-width: var(--site-max-width);
@@ -22,16 +30,13 @@ h1, h2  {
 	margin-bottom: var(--t-space-1);
 }
 
-h3, h4, h5, h6 {
-	margin-bottom: var(--t-space-2);
-}
-
 .title-1 {
 	font-size: var(--font-size-1);
 }
 
 .title-2 {
 	font-size: var(--font-size-2);
+	margin-bottom: var(--space-4);
 }
 
 .title-3 {
@@ -52,6 +57,15 @@ h3, h4, h5, h6 {
 
 .st_block {
 	position: relative;
+}
+
+.prefix {
+	font-size: 22px;
+	color: #151515;
+	font-weight: 500;
+	opacity: .5;
+	display: block;
+	margin-bottom: 16px;
 }
 
 

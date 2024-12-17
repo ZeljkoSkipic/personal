@@ -22,11 +22,12 @@
 				<?php
 
 				$text = get_sub_field('text');
+				$prefix = get_sub_field('prefix');
 				$image = get_sub_field('image');
 				$size = 'full'; ?>
 
 				<div class="left">
-					<h3 class="title-2"><?php echo $title; ?></h3>
+					<h3 class="title-3"><?php echo $title; ?></h3>
 					<?php echo $text; ?>
 				</div>
 				<div class="right">

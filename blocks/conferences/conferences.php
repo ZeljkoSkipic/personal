@@ -1,5 +1,5 @@
 <section class="conference_speaker space_0_1">
-	<div class="c-narrow">
+	<div class="c-wide">
 		<?php get_template_part('components/intro'); ?>
 		<?php
 
@@ -12,17 +12,21 @@
 			$image = get_sub_field('image');
 			$size = 'full';
 			if( $image ) { ?>
-			<figure>
-				<?php
-				echo wp_get_attachment_image( $image, $size, "", array( "class" => "image" ) );
-				?>
-				<figcaption>
+				<div class="grid_item">
+
+				<figure>
+					<?php
+					echo wp_get_attachment_image( $image, $size, "", array( "class" => "image" ) );
+					?>
+
+				</figure>
+				<div class="grid_item_text">
 					<h3><?php echo get_the_title($image); ?></h3>
 					<p>
 						<?php echo wp_get_attachment_caption($image); ?>
-			</p>
-				</figcaption>
-			</figure>
+					</p>
+				</div>
+			</div>
 
 			<?php } ?>
 
