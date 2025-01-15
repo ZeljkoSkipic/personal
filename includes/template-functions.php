@@ -139,4 +139,5 @@ function register_acf_blocks() {
 	register_block_type( __DIR__ . '/../blocks/manager' );
 	register_block_type( __DIR__ . '/../blocks/conferences' );
 	register_block_type( __DIR__ . '/../blocks/mentorship' );
+	register_block_type( __DIR__ . '/../blocks/testimonials' );
 }

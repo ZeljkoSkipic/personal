@@ -20,16 +20,12 @@
 }
 .intro_title {
 	font-size: var(--font-size-1);
-	width: 48%;
-	margin-bottom: var(--space-3);
+	span {
+		opacity: .6;
+	}
 }
 .intro_text {
-	margin-bottom: var(--space-1);
-	font-size: 4.2rem;
-	width: 48%;
 	line-height: 1.25;
-	margin-left: auto;
-	font-weight: 300;
 	p {
 		&:first-child {
 			margin-top: 0;

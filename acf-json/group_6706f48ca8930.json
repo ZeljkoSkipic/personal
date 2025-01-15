@@ -72,6 +72,28 @@
                     "allow_in_bindings": 0,
                     "preview_size": "thumbnail",
                     "parent_repeater": "field_6706f4e15b253"
+                },
+                {
+                    "key": "field_6762ba3947980",
+                    "label": "Year",
+                    "name": "year",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6706f4e15b253"
                 }
             ]
         }
@@ -94,5 +116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1728509665
+    "modified": 1734523456
 }

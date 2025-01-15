@@ -1,9 +1,9 @@
 {
-    "key": "group_67196f20ea680",
-    "title": "BLOCK : Mentorship",
+    "key": "group_6771aac73ba22",
+    "title": "BLOCK : Testimonials",
     "fields": [
         {
-            "key": "field_67196f20ed8fc",
+            "key": "field_6771aac740c6c",
             "label": "Intro",
             "name": "",
             "aria-label": "",
@@ -21,7 +21,7 @@
             "selected": 0
         },
         {
-            "key": "field_67196f20edd0c",
+            "key": "field_6771aac744701",
             "label": "Intro",
             "name": "",
             "aria-label": "",
@@ -39,9 +39,9 @@
             "esc_html": 0
         },
         {
-            "key": "field_67196f20ee0c7",
+            "key": "field_6771aac748392",
             "label": "Intro",
-            "name": "mentorship_intro",
+            "name": "testimonials_intro",
             "aria-label": "",
             "type": "clone",
             "instructions": "",
@@ -61,7 +61,7 @@
             "prefix_name": 0
         },
         {
-            "key": "field_67196f20ee4b8",
+            "key": "field_6771aac74be7a",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -79,7 +79,7 @@
             "selected": 0
         },
         {
-            "key": "field_67196f20ee8ef",
+            "key": "field_6771aac74f873",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -97,9 +97,9 @@
             "esc_html": 0
         },
         {
-            "key": "field_67196fcfe18c6",
-            "label": "Items",
-            "name": "items",
+            "key": "field_6771ab046151e",
+            "label": "Testimonials",
+            "name": "testimonials",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -115,35 +115,13 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Row",
+            "button_label": "Add Testimonial",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_67196feee18c7",
-                    "label": "Title",
-                    "name": "item_title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "allow_in_bindings": 0,
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_67196fcfe18c6"
-                },
-                {
-                    "key": "field_67196ff5e18c8",
-                    "label": "Text",
-                    "name": "item_text",
+                    "key": "field_6771ab0d6151f",
+                    "label": "Testimonial",
+                    "name": "testimonial",
                     "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "",
@@ -160,12 +138,56 @@
                     "media_upload": 0,
                     "toolbar": "full",
                     "delay": 0,
-                    "parent_repeater": "field_67196fcfe18c6"
+                    "parent_repeater": "field_6771ab046151e"
                 },
                 {
-                    "key": "field_67197054e18c9",
+                    "key": "field_6771ab2361520",
+                    "label": "Person",
+                    "name": "person",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6771ab046151e"
+                },
+                {
+                    "key": "field_6771ab2861521",
+                    "label": "Company",
+                    "name": "company",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6771ab046151e"
+                },
+                {
+                    "key": "field_6771ac24e39cf",
                     "label": "Image",
-                    "name": "item_image",
+                    "name": "image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
@@ -187,7 +209,26 @@
                     "mime_types": "",
                     "allow_in_bindings": 0,
                     "preview_size": "thumbnail",
-                    "parent_repeater": "field_67196fcfe18c6"
+                    "parent_repeater": "field_6771ab046151e"
+                },
+                {
+                    "key": "field_6782c522d49a9",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "",
+                    "parent_repeater": "field_6771ab046151e"
                 }
             ]
         }
@@ -197,7 +238,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/mentorship"
+                "value": "acf\/testimonials"
             }
         ]
     ],
@@ -210,5 +251,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736623625
+    "modified": 1736699253
 }

@@ -69,6 +69,76 @@
             "mime_types": "",
             "allow_in_bindings": 0,
             "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_6762b3f33ec32",
+            "label": "Socials",
+            "name": "socials",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Social",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6762b3fb3ec33",
+                    "label": "Logo",
+                    "name": "logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
+                    "allow_in_bindings": 0,
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_6762b3f33ec32"
+                },
+                {
+                    "key": "field_6762b4163ec35",
+                    "label": "Link",
+                    "name": "link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "parent_repeater": "field_6762b3f33ec32"
+                }
+            ]
         }
     ],
     "location": [
@@ -89,5 +159,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733156696
+    "modified": 1734522406
 }

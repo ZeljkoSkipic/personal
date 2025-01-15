@@ -3,8 +3,7 @@ html {
   }
 
 body {
- 	background-color: #e2e2e2;
-	padding-top: var(--space-4);
+ 	background-color: #dadada;
 }
 .container {
 	width: var(--site-width);
@@ -27,20 +26,29 @@ body {
 // Fix user agent spacings
 
 h1, h2  {
-	margin-bottom: var(--t-space-1);
+	margin-bottom: 3.2rem;
 }
 
 .title-1 {
 	font-size: var(--font-size-1);
+	span {
+		opacity: .6;
+	}
 }
 
 .title-2 {
 	font-size: var(--font-size-2);
-	margin-bottom: var(--space-4);
+	span {
+		opacity: .6;
+	}
 }
 
 .title-3 {
 	font-size: var(--font-size-3);
+	span {
+		font-weight: 600;
+		opacity: .6;
+	}
 }
 
 .title-4 {
@@ -104,23 +112,4 @@ h1, h2  {
 
 .wp-block-table table {
 	margin-bottom: 1em;
-}
-
-h1, h2 {
-	span {
-		font-style: italic;
-		position: relative;
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			right: 0;
-			width: 100%;
-			height: 30px;
-			background-image: url(../images/underline.svg);
-			background-size: contain;
-			background-repeat: no-repeat;
-			transform: translateY(-40%);
-		}
-	}
 }

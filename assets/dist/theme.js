@@ -1,20 +1,6 @@
 "use strict";
 
 jQuery(document).ready(function ($) {
-  var $stickyElement = $(".header-main");
-
-  // Get the initial offset position of the element
-  var headerHeight = $stickyElement.outerHeight();
-  $(window).on("scroll", function () {
-    if ($(window).scrollTop() >= headerHeight) {
-      headerHeight = $stickyElement.outerHeight();
-      $stickyElement.addClass("is-pinned");
-    } else {
-      headerHeight = $stickyElement.outerHeight();
-      $stickyElement.removeClass("is-pinned");
-    }
-  });
-
   // Mobile navigation
 
   $(".menu-toggle").click(function () {
@@ -78,5 +64,16 @@ jQuery(document).ready(function ($) {
         }
       });
     });
+  });
+  $(".contact_trigger").on("click", function () {
+    $(".form_wrap").fadeToggle();
+    $(".form_wrap").toggleClass('open');
+  });
+  $(document).keyup(function (e) {
+    if (e.keyCode == 27) {
+      // Esc
+      $(".form_wrap.open").fadeToggle();
+      $(".form_wrap").removeClass('open');
+    }
   });
 });

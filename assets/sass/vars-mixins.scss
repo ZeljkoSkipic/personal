@@ -1,5 +1,5 @@
 :root {
-	--font-size-1: 10rem;
+	--font-size-1: 8rem;
 	--font-size-2: 7.5rem;
 	--font-size-3: 4.8rem;
 	--font-size-4: 3rem;
@@ -18,9 +18,9 @@
 	--color-3: #EB5E44;
 	--color-4: #33D4BE;
 
-	--t-color: #212121;
-	--b-color: #151614;
-	--bg-1: #f7f7f7;
+	--t-color: #020202;
+	--b-color: #5f6368;
+	--bg-1: #f0efef;
 	--bg-2: #000;
 	--st: .3s all;
 
@@ -357,7 +357,7 @@
 // Buttons
 
 @mixin btn {
-	padding: 1rem 2.5rem;
+	padding: 1.5rem 3.5rem;
 	width: fit-content;
 	min-width: 150px;
 	display: inline-flex;
@@ -367,12 +367,13 @@
 	position: relative;
 	overflow: hidden;
 	color: #fff;
-	font-size: 1.6rem;
+	font-size: 20px;
+	border-radius: 50px
 }
 
 @mixin btn-1 {
 	@include btn;
-	background-color: var(--color-1);
+	background-color: rgba(2, 2, 2, 1);
 }
 
 @mixin btn-2 {

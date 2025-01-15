@@ -90,7 +90,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -116,7 +116,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "50",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -131,6 +131,24 @@
             "mime_types": "",
             "allow_in_bindings": 0,
             "preview_size": "thumbnail"
+        },
+        {
+            "key": "field_6762b7f90722b",
+            "label": "Badge Link",
+            "name": "badge_link",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https:\/\/www.credential.net\/4617d19c-9b10-4522-936b-659b9e570ec2#acc.02rt64qY",
+            "allow_in_bindings": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -151,5 +169,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1733219090
+    "modified": 1734522888
 }

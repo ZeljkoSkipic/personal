@@ -4,7 +4,7 @@
 		<?php
 
 		if( have_rows('images') ): ?>
-		<div class="conf_grid space_3_0">
+		<div class="conf_grid">
 
 			<?php while( have_rows('images') ) : the_row(); ?>
 
@@ -13,19 +13,20 @@
 			$size = 'full';
 			if( $image ) { ?>
 				<div class="grid_item">
-
+				<div class="grid_item_text">
+					<p class="prefix"><?php echo get_the_title($image); ?></p>
+					<h3 class="title-3">
+						<?php echo wp_get_attachment_caption($image); ?>
+					</h3>
+					<p class="year"><?php echo wp_kses_post( get_sub_field('year') ); ?></p>
+				</div>
 				<figure>
 					<?php
 					echo wp_get_attachment_image( $image, $size, "", array( "class" => "image" ) );
 					?>
 
 				</figure>
-				<div class="grid_item_text">
-					<h3><?php echo get_the_title($image); ?></h3>
-					<p>
-						<?php echo wp_get_attachment_caption($image); ?>
-					</p>
-				</div>
+
 			</div>
 
 			<?php } ?>

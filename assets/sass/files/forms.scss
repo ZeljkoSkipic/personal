@@ -1,0 +1,197 @@
+.form_wrap {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 11;
+	background-color: rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(10px);
+	display: none;
+
+	p {
+		margin-block: 0 var(--space-3);
+	}
+	.form_wrap_inner {
+		border-radius: 32px;
+		width: 95rem;
+		max-width: 90%;
+		display: flex;
+		background-color: #e8e1d8;
+		min-width: 50%;
+		@include flex;
+		justify-content: flex-end;
+		margin-left: auto;
+		min-height: calc(100% - 25px);
+		margin-top: 25px;
+		.close_btn_wrap {
+			width: 9rem;
+			padding-top: 25px;
+			display: flex;
+			justify-content: center;
+			svg {
+				width: 4.5rem;
+				height: 4.55rem;
+				cursor: pointer;
+			}
+		}
+	}
+	.contact_email {
+		margin-top: auto;
+		margin-bottom: 0;
+		color: var(--color-2);
+		font-size: 7rem;
+	}
+}
+$text-size: 2.4rem;
+.contact_form_wrap {
+	margin-inline: auto;
+	background-color: #fff;
+	border-radius: 32px;
+	width: calc(100% - 9rem);
+	padding: var(--space-3) var(--space-2);
+	display: flex;
+	flex-direction: column;
+}
+.wpforms-container {
+	.wpforms-field-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3.2rem;
+	}
+	.wpforms-field {
+		margin-bottom: 12px;
+		.wpforms-field-label {
+			font-size: 2.8rem;
+			background-image: url(../icons/contact/file-text.svg);
+			background-position: center left;
+			background-repeat: no-repeat;
+			background-size: 3rem;
+			padding-left: 3.6rem;
+			color: var(--t-color);
+			margin-bottom: 8px;
+		}
+		input, textarea, select {
+			border-width: 0 0 2px 0;
+			font-size: $text-size;
+			padding: 1rem;
+			font-weight: 300;
+			@include mob-only {
+				font-size: 16px;
+			}
+
+			option {
+				font-size: 2rem
+			}
+			&:focus, &.wpforms-valid {
+				outline: none;
+				border-color: var(--color-1);
+			}
+			&.wpforms-error {
+				border-width: 0 0 1px 0!important;
+			}
+			&::placeholder {
+				font-size: $text-size;
+			}
+		}
+		select {
+			cursor: pointer;
+			background-image: url(../icons/contact/chevron-down.svg);
+			background-position: top 1.3rem right 1rem;
+		}
+		.wpforms-error[role="alert"] {
+			font-size: 12px;
+		}
+
+		&.wpforms-field-name .wpforms-field-label {
+			background-image: url(../icons/contact/user.svg);
+		}
+		&.wpforms-field-email .wpforms-field-label {
+			background-image: url(../icons/contact/mail.svg);
+		}
+		&.wpforms-field-phone .wpforms-field-label {
+			background-image: url(../icons/contact/smartphone.svg);
+		}
+		&.wpforms-field-textarea .wpforms-field-label {
+			background-image: url(../icons/contact/pencil.svg);
+		}
+		&.wpforms-field-address .wpforms-field-label {
+			background-image: url(../icons/contact/map-pin.svg);
+		}
+		&.wpforms-field-date-time .wpforms-field-label {
+			background-image: url(../icons/contact/calendar.svg);
+		}
+		&.wpforms-field-checkbox .wpforms-field-label {
+			background-image: url(../icons/contact/check-square.svg);
+			margin-bottom: 1rem
+		}
+		&.wpforms-field-radio .wpforms-field-label {
+			background-image: url(../icons/contact/check-square.svg);
+			margin-bottom: 1rem
+		}
+	}
+	.wpforms-field-textarea {
+		grid-column: 1 / 3
+	}
+	.wpforms-field-checkbox, .wpforms-field-radio {
+		ul {
+			@include clean-list;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 2.6rem;
+			margin-top: 3.2rem;
+			li {
+				font-size: 20px;
+				@include flex;
+				align-items: center;
+				text-align: center;
+				input {
+					display: none;
+				}
+				label {
+					background-size: 26px;
+					background-position: center left 10px;
+					background-repeat: no-repeat;
+					padding-left: 5.2rem;
+					cursor: pointer;
+					width: 100%;
+					border: 2px solid var(--color-2);
+					padding: 10px;
+					@include st;
+				}
+			}
+		}
+	}
+	.wpforms-field-checkbox {
+		ul {
+			li {
+				label {
+					background-image: url(../icons/square.svg);
+				}
+				input:checked + label {
+					background-image: url(../icons/check-square.svg);
+				}
+			}
+		}
+	}
+	.wpforms-field-radio {
+		ul {
+			li {
+				label {
+					background-image: url(../icons/contact/minus.svg);
+				}
+				input:checked + label {
+					background-image: url(../icons/contact/check-white.svg);
+					background-color: var(--color-2);
+					color: #fff;
+					font-weight: 300;
+				}
+			}
+		}
+	}
+
+	.wpforms-submit {
+		@include btn-1;
+		cursor: pointer;
+	}
+}
