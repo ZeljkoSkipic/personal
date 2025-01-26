@@ -35,6 +35,11 @@
 			margin-top: 0;
 		}
 	}
+	a {
+		color: var(--t-color);
+		text-decoration: underline;
+		display: inline-flex;
+	}
 }
 
 /* Columns */

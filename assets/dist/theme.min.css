@@ -111,6 +111,7 @@ picture{line-height:0}
 .intro_title span{opacity:.6}
 .intro_text{line-height:1.25;max-width:1080px}
 .intro_text p:first-child{margin-top:0}
+.intro_text a{color:var(--t-color);text-decoration:underline;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}
 .cols-2 .st_info_boxes_inner{grid-template-columns:repeat(2,1fr)}
 .cols-3 .st_info_boxes_inner{grid-template-columns:repeat(3,1fr)}
 .cols-4 .st_info_boxes_inner{grid-template-columns:repeat(4,1fr)}
