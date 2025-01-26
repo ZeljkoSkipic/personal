@@ -20,12 +20,16 @@
 }
 .intro_title {
 	font-size: var(--font-size-1);
+	@include tab-max {
+		margin-bottom: var(--space-2);
+	}
 	span {
 		opacity: .6;
 	}
 }
 .intro_text {
 	line-height: 1.25;
+	max-width: 1080px;
 	p {
 		&:first-child {
 			margin-top: 0;

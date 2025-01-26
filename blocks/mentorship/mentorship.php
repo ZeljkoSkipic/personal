@@ -1,4 +1,4 @@
-<section class="mentorship space_1">
+<section id="mentor" class="mentorship space_1">
 	<div class="container">
 	<?php get_template_part('components/intro'); ?>
 

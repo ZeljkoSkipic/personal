@@ -8,22 +8,38 @@
 	background-color: rgba(255, 255, 255, 0.3);
 	backdrop-filter: blur(10px);
 	display: none;
-
+	@include tab-max {
+		overflow: auto;
+	}
+	.title-1 {
+		@include mob-only {
+			margin-bottom: 2.6rem;
+		}
+	}
 	p {
 		margin-block: 0 var(--space-3);
+		@include mob-only {
+			font-size: 16px;
+			margin-bottom: var(--space-4);
+		}
 	}
 	.form_wrap_inner {
 		border-radius: 32px;
 		width: 95rem;
 		max-width: 90%;
 		display: flex;
-		background-color: #e8e1d8;
+		background-color: rgba(2, 2, 2, .2);
 		min-width: 50%;
 		@include flex;
 		justify-content: flex-end;
 		margin-left: auto;
 		min-height: calc(100% - 25px);
 		margin-top: 25px;
+		@include mob-only {
+			flex-direction: column-reverse;
+			margin-top: 0;
+			min-height: unset;
+		}
 		.close_btn_wrap {
 			width: 9rem;
 			padding-top: 25px;
@@ -34,6 +50,11 @@
 				height: 4.55rem;
 				cursor: pointer;
 			}
+			@include mob-only {
+				margin-left: auto;
+				margin-right: 10px;
+				padding-block: 10px;
+			}
 		}
 	}
 	.contact_email {
@@ -41,6 +62,9 @@
 		margin-bottom: 0;
 		color: var(--color-2);
 		font-size: 7rem;
+		@include tab-max {
+			display: none;
+		}
 	}
 }
 $text-size: 2.4rem;
@@ -48,19 +72,37 @@ $text-size: 2.4rem;
 	margin-inline: auto;
 	background-color: #fff;
 	border-radius: 32px;
-	width: calc(100% - 9rem);
-	padding: var(--space-3) var(--space-2);
 	display: flex;
 	flex-direction: column;
+	padding: var(--space-3) var(--space-2);
+	@include tab-min {
+		width: calc(100% - 9rem);
+	}
+	@include tab-only {
+		padding: var(--space-4);
+
+	}
+	@include mob-only {
+		width: 100%;
+	}
+
 }
 .wpforms-container {
 	.wpforms-field-container {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 3.2rem;
+		@include mob-only {
+			grid-template-columns: 1fr;
+			gap: 0;
+		}
 	}
 	.wpforms-field {
-		margin-bottom: 12px;
+		margin-bottom: 1.5rem;
+		@include tab-max {
+			grid-column: span 2;
+			padding-bottom: 0!important;
+		}
 		.wpforms-field-label {
 			font-size: 2.8rem;
 			background-image: url(../icons/contact/file-text.svg);
@@ -76,6 +118,8 @@ $text-size: 2.4rem;
 			font-size: $text-size;
 			padding: 1rem;
 			font-weight: 300;
+			background-color: transparent;
+			height: 100%;
 			@include mob-only {
 				font-size: 16px;
 			}
@@ -131,7 +175,11 @@ $text-size: 2.4rem;
 		}
 	}
 	.wpforms-field-textarea {
-		grid-column: 1 / 3
+		grid-column: 1 / 3;
+		textarea.wpforms-field-medium {
+			height: 10rem;
+			padding-right: 15rem;
+		}
 	}
 	.wpforms-field-checkbox, .wpforms-field-radio {
 		ul {
@@ -193,5 +241,11 @@ $text-size: 2.4rem;
 	.wpforms-submit {
 		@include btn-1;
 		cursor: pointer;
+		right: 0;
+		min-width: unset;
+		@include tab-min {
+			top: -90px;
+			position: absolute;
+		}
 	}
 }

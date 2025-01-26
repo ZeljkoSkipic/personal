@@ -2,24 +2,45 @@
 // Home Hero
 
 .home_hero {
-	padding-top: var(--space-1);
-	min-height: 100svh;
+	padding-top: var(--space-2);
 	display: flex;
 	box-sizing: border-box;
 	z-index: 9;
 	position: relative;
 	background-color: #dadada;
+	@include mob-only {
+		padding-top: var(--space-4)
+	}
+	@include limbo-min {
+		min-height: calc(100svh - 70px);
+
+	}
 	.hero_socials {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		max-width: 75rem;
-		gap: 7.5rem;
 		margin-top: auto;
 		padding-bottom: var(--space-4);
 		.logo {
-			height: 35px;
+			height: 32.5px;
 			object-fit: contain;
 			object-position: left
+		}
+		@include limbo-min {
+			gap: 7rem;
+			max-width: 75rem;
+		}
+		@include tab-max {
+			grid-template-columns: 1fr;
+			margin-top: var(--space-1);
+			margin-bottom: -184px;
+			max-width: 45%;
+			a {
+				width: fit-content;
+			}
+			.logo {
+				height: 25px;
+				margin-block: 5px 20px;
+			}
 		}
 	}
 	.home_hero_inner {
@@ -28,36 +49,57 @@
 			width: calc(100% - 50rem);
 			flex-direction: column;
 			display: flex;
+			@include tab-max {
+				width: 100%;
+			}
 		}
 		.right {
 			width: 45rem;
 			display: flex;
 			flex-direction: column;
+			justify-content: flex-end;
+			@include tab-max {
+				width: 55%;
+				margin-left: auto;
+			}
 			img {
 				margin-top: auto;
 			}
 		}
 	}
 	h1 {
-		font-size: 11rem;
+		font-size: 14rem;
 		line-height: 1;
 		letter-spacing: -5px;
+		@include tab-max {
+			font-size: 7.5rem;
+		}
 	}
 	.home_hero_text {
-		font-size: 2.5rem;
 		margin-bottom: 4.8rem;
+		@include limbo-min {
+			font-size: 2.5rem;
+		}
+		@include mob-only {
+			margin-bottom: 3.2rem;
+			br {
+				display: none;
+			}
+		}
 	}
 }
 
 // Certified Developer
 
 .certified_developer {
-	width: calc(100% - 50px);
-	margin-inline: auto;
+
 	background-color: #f0efef;
-	border: 1px solid #02020233;
-	border-radius: 32px;
+	border-radius: 3.2rem;
 	padding-block: var(--space-3);
+	@include limbo-min {
+		width: calc(100% - 50px);
+		margin-inline: auto;
+	}
 	.certified_developer_inner {
 		@include flex-between;
 		h2 {
@@ -67,8 +109,14 @@
 			width: 40%;
 			display: flex;
 			flex-direction: column;
+			@include tab-max {
+				width: 100%;
+			}
 			.badge_link {
 				margin-top: auto;
+				@include tab-max {
+					display: none;
+				}
 				img {
 					width: 17rem;
 					@include st;
@@ -79,17 +127,27 @@
 			width: 55%;
 			padding: var(--space-3) 0 0 var(--space-3);
 			background-color: var(--color-2);
-			border-radius: 32px;
+			border-radius: 3.2rem;
 			display: flex;
 			img {
-				border-radius: 32px 0 32px 0;
+				border-radius: 3.2rem 0 3.2rem 0;
 			}
+			@include tab-max {
+				width: 100%;
+				margin-top: 3.2rem;
+				padding: var(--space-4) 0 0 var(--space-4);
+				img {
+					border-radius: 1.6rem 0 1.6rem 0;
+				}
+			}
+
 		}
 	}
 	&:hover {
 		.left .badge_link {
 			img {
 				width: 19rem;
+				margin-top: -2rem
 			}
 		}
 	}
@@ -102,14 +160,19 @@
 	@include flex-between;
 	position: relative;
 	.left {
-		width: 48%;
-		max-width: 80rem;
-		position: sticky;
-		top: var(--space-1);
 		height: fit-content;
-		min-height: calc(100vh - 20rem);
 		display: flex;
 		flex-direction: column;
+		@include limbo-min {
+			min-height: calc(100vh - 20rem);
+			position: sticky;
+			top: var(--space-1);
+			width: 48%;
+			max-width: 80rem;
+		}
+		@include tab-max {
+			width: 100%;
+		}
 	}
 	.st_intro {
 		margin-bottom: 4.8rem;
@@ -120,6 +183,17 @@
 		gap: 3.2rem;
 		padding-top: var(--space-4);
 		margin-top: auto;
+		@include tab-max {
+			margin-block: var(--space-2);
+			@include mob-only {
+				grid-template-columns: repeat(3, 1fr);
+				.logo {
+					&:nth-child(4), &:nth-child(5) {
+						display: none;
+					}
+				}
+			}
+		}
 		.logo {
 			height: 50px;
 			object-fit: contain;
@@ -131,18 +205,26 @@
 		width: 7.5rem;
 	}
 	.project_manager_boxes {
-		width: 48%;
-		max-width: 70rem;
+		@include limbo-min {
+			width: 48%;
+			max-width: 70rem;
+		}
+		@include tab-max {
+			width: 100%;
+		}
 	}
 	.project_manager_box {
 		background-color: var(--card-color);
 		background-color: #f0efef;
-		border-radius: 32px;
+		border-radius: 3.2rem;
 		padding: var(--space-4);
-		min-height: 60vh;
 		display: flex;
 		flex-direction: column;
 		position: relative;
+		@include limbo-min {
+			height: 60rem;
+
+		}
 		&:not(:last-child) {
 			margin-bottom: 7.8rem;
 		}
@@ -153,7 +235,7 @@
 		}
 		&:nth-child(2) {
 			.top {
-				background-color: #000;
+				background-color: #111217;
 			}
 		}
 		&:nth-child(3) {
@@ -163,41 +245,45 @@
 		}
 		.top {
 			position: absolute;
-			height: 100%;
-			width: 100%;
-			z-index: -1;
+			height: 10rem;
+			width: 10rem;
+			left: var(--space-4);
+			top: var(--space-4);
 			@include st;
-			opacity: .6;
-			background-color: #222;
-			border-radius: 32px;
-			padding: 3.2rem;
+			border-radius: 1.2rem;
 			.image {
 				width: 100%;
 				height: 100%;
 				object-fit: contain;
-			}
-		}
-		&:hover {
-			.top {
-				z-index: 1;
-				opacity: 1;
-			}
-			.bottom {
-				opacity: 0;
+				display: flex;
+				align-items: center;
 			}
 		}
 		.bottom {
 			margin-top: auto;
 			bottom: 4.8rem;
 			@include st;
+			padding-top: calc(var(--space-4) + 10rem);
 		}
 		h3 {
 			margin-bottom: 0;
 		}
 		p {
 			font-size: 20px;
+			@include mob-only {
+				font-size: 18px;
+			}
 		}
-
+		&:hover {
+			.top {
+				padding: 3.2rem;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				border-radius: 3.2rem;
+			}
+		}
 	}
 }
 
@@ -207,45 +293,57 @@
 .conference_speaker  {
 	background-color: #f0efef;
 	padding-block: var(--space-1);
-	border-radius: 32px
+	border-radius: 3.2rem;
+
 }
 .conf_grid {
 	.grid_item {
-		@include flex-between;
-		align-items: center;
 		position: relative;
 		padding-block: var(--space-3);
-		padding-inline: 4.8rem;
-		.grid_item_text {
-			width: 55%;
+		border-top: 1px solid rgba(2, 2, 2, 0.2);
+		&:last-child {
+			border-bottom: 1px solid rgba(2, 2, 2, 0.2);
 		}
-		figure {
-			width: 30%;
+		@include limbo-min {
+			@include flex-between;
+			align-items: center;
+			padding-inline: 4.8rem;
+			.grid_item_text {
+				width: 55%;
+			}
+			figure {
+				width: 30%;
+			}
 		}
+
 		.year {
 			font-size: 18px;
 		}
-		&:not(:last-child) {
-			border-bottom: 1px solid #02020233;
-		}
-		.image {
-			height: calc(100% + 6.4rem);
-			max-height: 90vh;
-			border-radius: 32px;
-			position: absolute;
-			left: 60%;
-			max-width: 40%;
-			aspect-ratio: 1 / 1;
-			width: auto;
-			top: -3.2rem;
-			bottom: 0;
-			opacity: 0;
+
+		img {
+			border-radius: 3.2rem;
 			@include st;
 			z-index: 2;
 			box-sizing: border-box;
+			@include tab-max {
+				width: 90%;
+				margin-left: 5%;
+			}
+			@include limbo-min {
+				height: calc(100% + 6.4rem);
+				max-height: 90vh;
+				position: absolute;
+				left: 60%;
+				max-width: 40%;
+				aspect-ratio: 1 / 1;
+				width: auto;
+				top: -3.2rem;
+				bottom: 0;
+				opacity: 0;
+			}
 		}
 		&:hover {
-			.image {
+			img {
 				opacity: 1;
 			}
 		}
@@ -256,8 +354,8 @@
 // Mentorship
 
 .mentorship  {
-	padding-bottom: 25rem;
-	.st_intro {
+	@include desk-min {
+		padding-bottom: 25rem;
 	}
 	.st_tabs_nav {
 		margin-bottom: var(--space-3);
@@ -266,6 +364,17 @@
 			padding: 0;
 			display: flex;
 			position: relative; /* Added for slider positioning */
+			@include mob-only {
+				@include flex-between;
+				flex-direction: row-reverse;
+				.slider {
+					display: none;
+				}
+				li {
+					width: 48%;
+					margin-right: 0;
+				}
+			}
 		}
 		li {
 			display: inline-block;
@@ -287,6 +396,9 @@
 				a {
 					border-color: var(--color-2);
 					color: var(--t-color);
+					@include mob-only {
+						font-weight: 600;
+					}
 				}
 			}
 		}
@@ -303,17 +415,33 @@
 	}
 	.st_tabs_content {
 		border-top-left-radius: 0;
-
+		@include tab-max {
+			width: calc(100% + 50px);
+			margin-left: -25px;
+		}
 		.st_tab {
 			.st_tab_inner {
 				@include flex-between;
-				align-items: center;
+				align-items: flex-end;
 				padding: var(--space-4) var(--space-2) 0 var(--space-2);
 				border-radius: 3.2rem;
 				background-color: #f0efef;
+				@include limbo-max {
+					flex-direction: column-reverse;
+				}
 				.left {
 					width: 40%;
-					transform: translateY(var(--space-3));
+					@include desk-min {
+						transform: translateY(var(--space-3));
+					}
+					@include limbo-max {
+						width: 100%;
+						margin-block: var(--space-3);
+						text-align: center;
+						img {
+							max-width: 350px;
+						}
+					}
 					img {
 						object-position: bottom;
 						aspect-ratio: 1 / 1;
@@ -322,8 +450,18 @@
 				}
 				.right {
 					width: 50%;
-					max-width: 75rem;
-					padding-bottom: var(--space-3);
+					@include limbo-max {
+						width: 100%;
+						h3 {
+							margin-bottom: 3.2rem;
+							font-size: var(--font-size-3);
+						}
+					}
+					@include desk-min {
+						max-width: 75rem;
+						padding-bottom: var(--space-3);
+
+					}
 				}
 			}
 			&:not(:first-child) {
@@ -332,7 +470,7 @@
 		}
 	}
 
-    @include mob-only {
+    @include tab-max {
         &.stack_tabs {
             ul {
                 flex-direction: column;
@@ -350,16 +488,14 @@
 
 // Testimonials
 
-.testimonials {
-	background-color: var(--bg-1);
-}
+
 .testimonials_inner {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	gap: 3.2rem;
 	.testimonial {
 		border-radius: 0 3.2rem 3.2rem 3.2rem;
-		background-color: #fff;
+		background-color: #f0efef;
 		padding: var(--space-4);
 		background-image: url(/wp-content/uploads/2024/12/quote-open.png);
 		background-repeat: no-repeat;
@@ -368,15 +504,26 @@
 		.testimonial_content {
 			width: 100%;
 			margin-bottom: auto;
-			margin-bottom: var(--space-4);
+			margin-bottom: 3.2rem;
+			@include mob-only {
+				font-size: 16px;
+			}
 		}
-		&:nth-child(1), &:nth-child(2), &:nth-child(3) {
-			grid-column: span 2;
+		@include desk-min {
+			&:nth-child(1), &:nth-child(2), &:nth-child(3) {
+				grid-column: span 2;
+			}
+			&:nth-child(4), &:nth-child(5) {
+				grid-column: span 3;
+			}
+			&:nth-child(6) {
+				grid-column: span 6;
+			}
 		}
-		&:nth-child(4), &:nth-child(5) {
+		@include limbo-only {
 			grid-column: span 3;
 		}
-		&:nth-child(6) {
+		@include tab-max {
 			grid-column: span 6;
 		}
 	}
@@ -388,6 +535,9 @@
 		width: 50%;
 		display: flex;
 		align-items: flex-end;
+		@include mob-only {
+			font-size: 20px;
+		}
 	}
 	.reference {
 		position: relative;
@@ -411,5 +561,65 @@
 		position: absolute;
 		width: 100%;
 		height: 100%;
+	}
+}
+
+
+// Founder
+
+.founder {
+	position: relative;
+	background-color: var(--bg-1);
+	border-radius: 3.2rem;
+	.left {
+		width: 50%;
+		padding-right: var(--space-2);
+		@include limbo-max {
+			width: 100%;
+			padding-right: 0;
+			.st_intro {
+				margin-bottom: var(--space-3);
+			}
+		}
+		@include mob-only {
+			.btn-2 {
+				margin-top: 3.2rem;
+			}
+			.intro_text {
+				font-size: 18px;
+			}
+		}
+	}
+	.right {
+		@include desk-min {
+			width: 50%;
+			position: absolute;
+			right: 0;
+			top: var(--space-4);
+			bottom: var(--space-4);
+			text-align: right;
+			img {
+				height: 100%;
+				object-position: top right;
+				width: 100%;
+				max-width: 88rem;
+				border-radius: 3.2rem 0 0 3.2rem;
+			}
+		}
+		@include limbo-max {
+			width: 100%;
+			text-align: center;
+			padding-bottom: var(--space-1);
+			img {
+				width: 88rem;
+				max-width: calc(100% - 50px);
+				margin-inline: auto;
+				border-radius: 3.2rem;
+				aspect-ratio: 1980 / 1820;
+				object-position: top;
+
+			}
+		}
+
 	}
 }

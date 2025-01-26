@@ -51,8 +51,8 @@ function stier_setup()
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 250,
-			'width'       => 250,
+			'height'      => 50,
+			'width'       => 146,
 			'flex-width'  => true,
 			'flex-height' => true,
 		)
@@ -99,9 +99,6 @@ add_action('admin_enqueue_scripts', 'stier_admin_styles');
 // Include Custom Menu Walker
 require get_template_directory() . '/includes/custom-menu-walker.php';
 
-// S-Tier Icon Field for ACF
-
-require_once get_template_directory() . '/includes/theme-icons/init.php';
 
 // Custom template tags for this theme.
 

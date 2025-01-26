@@ -17,58 +17,52 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<!--
-	Insert site main color
-	<meta name="theme-color" content="#45eba5" />
-	-->
-	<?php echo get_field('head_script', 'option'); ?> <!-- Head External Code -->
+	<meta name="theme-color" content="#dadada" />
 	<?php wp_head(); ?>
 
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<?php echo get_field('body_top_script', 'option'); ?> <!-- Body Top External Code -->
 
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'stier' ); ?></a>
 	</div>
 	<header id="masthead" class="header-main c-wide">
 		<div class="header-main_inner">
-			<figure class="site-logo">
-				<?php
-				the_custom_logo(); ?>
-			</figure><!-- .site-branding -->
-			<!-- <div class="header_switch">
-				<span>Animation:</span>
-				<div class="btn btn-pill" id="button-1">
-					<input type="checkbox" class="checkbox" />
-					<div class="knob"></div>
-					<div class="btn-bg"></div>
-				</div>
-			</div> -->
-
-			<nav id="site-navigation" class="main-navigation">
-				<!-- Mobile Nav Button -->
-
-				<div class="hamburger">
-				<label for="nav-toggle">Navigation Menu</label>
-				<input type="checkbox" class="menu-toggle" id="nav-toggle">
-
-				<div></div></div>
-
-				<!-- Mobile Nav Button -->
-				<div class="menu-main-wrap">
+			<div class="nav_left">
+				<figure class="site-logo">
 					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'main',
-							'menu_id'        => 'primary-menu',
-							'walker'		 => new CustomMenuWalker
-						)
-					);
-					?>
-				</div>
-			</nav><!-- #site-navigation -->
+					the_custom_logo(); ?>
+				</figure>
+
+				<nav id="site-navigation" class="main-navigation">
+					<!-- Mobile Nav Button -->
+					<div class="menu-main-wrap">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'main',
+								'menu_id'        => 'primary-menu',
+								'walker'		 => new CustomMenuWalker
+							)
+						);
+						?>
+					</div>
+				</nav><!-- #site-navigation -->
+			</div>
+				<!-- Mobile Nav Button -->
+
+			<div class="nav_right">
+				<a class="chat-button mob_bot_bar">
+					<span class="online"></span>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#020202" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+				</a>
+				<a class="btn-1 contact_trigger mob_bot_bar" data-option="reset">Get in Touch</a>
+				<div class="hamburger">
+					<label for="nav-toggle">Menu</label>
+					<input type="checkbox" class="menu-toggle" id="nav-toggle">
+					<div></div></div>
+			</div>
 		</div>
 	</header><!-- #masthead -->

@@ -1,4 +1,4 @@
-<section class="conference_speaker space_0_1">
+<section id="speaker" class="conference_speaker space_0_1">
 	<div class="c-wide">
 		<?php get_template_part('components/intro'); ?>
 		<?php

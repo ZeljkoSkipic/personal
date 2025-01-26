@@ -1,9 +1,9 @@
 {
-    "key": "group_678405e5783db",
-    "title": "BLOCK : Bare Bones (copy)",
+    "key": "group_6795596f085d5",
+    "title": "BLOCK : Founder",
     "fields": [
         {
-            "key": "field_678405e57c490",
+            "key": "field_6795596f0e3d6",
             "label": "Intro",
             "name": "",
             "aria-label": "",
@@ -21,7 +21,7 @@
             "selected": 0
         },
         {
-            "key": "field_678405e57ff21",
+            "key": "field_6795596f11dae",
             "label": "Intro",
             "name": "",
             "aria-label": "",
@@ -39,7 +39,7 @@
             "esc_html": 0
         },
         {
-            "key": "field_678405e5839fd",
+            "key": "field_6795596f15aaa",
             "label": "Intro",
             "name": "Insert Block name with Intro Sufix",
             "aria-label": "",
@@ -61,7 +61,7 @@
             "prefix_name": 0
         },
         {
-            "key": "field_678405e58748c",
+            "key": "field_6795596f196cd",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -79,7 +79,7 @@
             "selected": 0
         },
         {
-            "key": "field_678405e58af07",
+            "key": "field_6795596f1d089",
             "label": "Content",
             "name": "",
             "aria-label": "",
@@ -97,11 +97,11 @@
             "esc_html": 0
         },
         {
-            "key": "field_678405e58e997",
-            "label": "Settings",
-            "name": "",
+            "key": "field_679559a6c8d6c",
+            "label": "Image",
+            "name": "image",
             "aria-label": "",
-            "type": "tab",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -110,71 +110,17 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_678405e592495",
-            "label": "Settings",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "title_message",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_678405e595e3d",
-            "label": "Background",
-            "name": "background",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_634949d802e36"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
-        },
-        {
-            "key": "field_678405e5999b9",
-            "label": "Spacing",
-            "name": "spacing",
-            "aria-label": "",
-            "type": "clone",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "clone": [
-                "group_63494c81e30ef"
-            ],
-            "display": "seamless",
-            "layout": "block",
-            "prefix_label": 0,
-            "prefix_name": 0
+            "return_format": "id",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
         }
     ],
     "location": [
@@ -182,7 +128,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "all"
+                "value": "acf\/founder"
             }
         ]
     ],
@@ -192,8 +138,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": false,
+    "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1736705509
+    "modified": 1737841679
 }

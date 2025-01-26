@@ -5,7 +5,7 @@
 			<div class="home_hero_text">
 				<?php echo wp_kses_post( get_field('text') ); ?>
 			</div>
-			<a class="btn-1 contact_trigger" href="#">Look at my horse</a>
+			<a class="btn-1 contact_trigger" data-option="reset">Send me a Message</a>
 			<div class="hero_socials">
 				<?php
 

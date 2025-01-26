@@ -8,6 +8,7 @@ jQuery(document).ready(function ($) {
 		$(".header-main").toggleClass('menu-open')
     });
 
+
     // Sub Menu Trigger
 
     $( ".sub-menu-trigger" ).click(function() {
@@ -78,4 +79,61 @@ jQuery(document).ready(function ($) {
 			$( ".form_wrap" ).removeClass('open');
 		}
 	});
+
+
+
+	(function() {
+		function onTidioChatApiReady() {
+		window.tidioChatApi.hide();
+		window.tidioChatApi.on("close", function() {
+		window.tidioChatApi.hide();
+		});
+		}
+
+		if (window.tidioChatApi) {
+		window.tidioChatApi.on("ready", onTidioChatApiReady);
+		} else {
+		document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+		}
+
+		document.querySelector(".chat-button, .chat-button-floating").addEventListener("click", function() {
+		window.tidioChatApi.show();
+		window.tidioChatApi.open();
+		});
+	   })();
+
+
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Select all buttons with the class 'contact_trigger'
+  const buttons = document.querySelectorAll('.contact_trigger');
+  const dropdown = document.getElementById('wpforms-303-field_5');
+
+  // Add click event listeners to each button
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const selectedOption = button.getAttribute('data-option'); // Get the value from the button's data-option
+
+      if (selectedOption === 'reset') {
+        // Reset the dropdown to its placeholder option
+        dropdown.value = '';
+      } else if (selectedOption) {
+        // Set the dropdown's value to the selected option
+        dropdown.value = selectedOption;
+      }
+    });
+  });
+});
+
+document.addEventListener("scroll", function () {
+	const elements = document.querySelectorAll(".mob_bot_bar");
+	elements.forEach(element => {
+	  if (window.scrollY >= window.innerHeight) { // Check if scrolled beyond 100vh
+		element.classList.add("visible");
+	  } else {
+		element.classList.remove("visible");
+	  }
+	});
+  });

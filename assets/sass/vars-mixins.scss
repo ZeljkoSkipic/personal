@@ -357,7 +357,7 @@
 // Buttons
 
 @mixin btn {
-	padding: 1.5rem 3.5rem;
+
 	width: fit-content;
 	min-width: 150px;
 	display: inline-flex;
@@ -366,22 +366,58 @@
 	transition: var(--st);
 	position: relative;
 	overflow: hidden;
-	color: #fff;
 	font-size: 20px;
-	border-radius: 50px
+	border-radius: 12px;
+	cursor: pointer;
+	@include mob-only {
+		width: 100%;
+	}
+
+
 }
 
 @mixin btn-1 {
 	@include btn;
 	background-color: rgba(2, 2, 2, 1);
+	color: #fff;
+	padding: 1.4rem 3.5rem 1.65rem 3.5rem;
+	&:before {
+		content: '';
+		display: block;
+		top: 0;
+		bottom: 0;
+		position: absolute;
+		width: 35px;
+		left: -60px;
+		transform: skewX(-20deg);
+		opacity: 0.5;
+		background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.56) 50%, rgba(255, 255, 255, 0) 100%);
+	}
+	&:hover:before {
+		left: 110%;
+		transition: 800ms ease all;
+		left: 0.2;
+	}
 }
 
 @mixin btn-2 {
 	@include btn;
-	background-color: var(--color-2);
+	color: var(--t-color);
+	font-weight: 600;
+	display: inline-flex;
+	svg {
+		margin-left: 8px;
+		margin-top: 2px;
+		transition: var(--st);
+	}
 	&:not(:first-of-type) {
 		@include tab-min {
-			margin-left: 2rem;
+			margin-left: 4rem;
+		}
+	}
+	&:hover {
+		svg {
+			margin-left: 12px;
 		}
 	}
 }
@@ -434,9 +470,10 @@ html {
 
 :root {
 	@include mob-only {
-		--space-1: 6rem;
+		--space-1: 10rem;
 		--space-2: 5rem;
 		--space-3: 4rem;
 		--space-4: 3rem;
+		--font-size-1: 6rem;
 	}
 }

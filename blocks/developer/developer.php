@@ -1,4 +1,4 @@
-<section class="certified_developer">
+<section id="developer" class="certified_developer">
 	<div class="certified_developer_inner c-wide">
 		<div class="left">
 			<h2 class="title-1"><?php echo wp_kses_post( get_field('dev_title') ); ?></h2>
